@@ -30,6 +30,7 @@
       }
     }
     &::after {
+      /* Área branca para simular invasão de section e não conflitar com o fade effect do slide */
       content: '';
       width: 100%;
       height: 28.8rem;
@@ -128,6 +129,73 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+.s-all-info-pokemons {
+  position: relative;
+  padding-top: 11.9rem;
+  margin-top: -28.8rem;
+  z-index: 2;
+  .top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 16.8rem;
+    h2 {
+      max-width: 26.5rem;
+    }
+    .search {
+      margin-top: 2.2rem;
+    }
+  }
+  .area-all {
+    display: flex;
+    .left-container {
+      width: 100%;
+      max-width: 23.9rem;
+      border-right: 1px solid #eff3f6;
+      padding-top: 7.1rem;
+      ul {
+        li {
+          &:not(:last-child) {
+            margin-bottom: 4rem;
+          }
+        }
+      }
+    }
+    .right-container {
+      padding-top: 7.1rem;
+      padding-left: 7.5rem;
+      padding-bottom: 7.5rem;
+      width: 100%;
+      .top-right {
+        margin-bottom: 6.3rem;
+        & > div {
+          display: flex;
+          align-items: center;
+          span {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.8rem;
+            line-height: 150%;
+            color: #4d5053;
+            margin-left: 0.6rem;
+          }
+        }
+      }
+      .all {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3.2rem;
+        margin-bottom: 6.8rem;
+      }
+      .btn-load-more {
+        /* display table pode ser usado para alinhar elementos que não possuem uma altura e largura fixas */
+        display: block;
+        margin: 0 auto;
       }
     }
   }
