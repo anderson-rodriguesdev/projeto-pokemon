@@ -1,1 +1,1 @@
-"use strict";console.log(oi);
+"use strict";var cardPokemon=document.querySelectorAll(".js-open-details-pokemon"),closeCard=document.querySelector(".js-close-details-pokemon");function openDetailsPokemon(){document.documentElement.classList.add("open-modal")}function closeDetailsPokemon(){document.documentElement.classList.remove("open-modal")}cardPokemon.forEach(function(e){e.addEventListener("click",openDetailsPokemon)}),closeCard.addEventListener("click",closeDetailsPokemon);

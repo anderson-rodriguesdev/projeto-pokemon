@@ -444,3 +444,356 @@
     color: #ffffff;
   }
 }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  @include centerTotalFlex;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  &[typePokemonModal='bug'] {
+    .box {
+      .left-container {
+        background: url('../img/bg-types/bug.svg');
+      }
+    }
+  }
+  &[typePokemonModal='dark'] {
+    .box {
+      .left-container {
+        background: url('../img/bg-types/dark.svg');
+      }
+    }
+  }
+  &[typePokemonModal='dragon'] {
+    .box {
+      .left-container {
+        background: url('../img/bg-types/dragon.svg');
+      }
+    }
+  }
+  &[typePokemonModal='electric'] {
+    .box {
+      .left-container {
+        background: url('../img/bg-types/electric.svg');
+      }
+    }
+  }
+  &[typePokemonModal='fairy'] {
+    .box {
+      .left-container {
+        background: url('../img/bg-types/fairy.svg');
+      }
+    }
+  }
+  &[typePokemonModal='fight'] {
+    .box {
+      .left-container {
+        background: url('../img/bg-types/fight.svg');
+      }
+    }
+  }
+  &[typePokemonModal='ground'] {
+    .box {
+      .left-container {
+        background: url('../img/bg-types/ground.svg');
+      }
+    }
+  }
+  &[typePokemonModal='ice'] {
+    .box {
+      .left-container {
+        background: url('../img/bg-types/ice.svg');
+      }
+    }
+  }
+  &[typePokemonModal='normal'] {
+    .box {
+      .left-container {
+        background: url('../img/bg-types/normal.svg');
+      }
+    }
+  }
+  &[typePokemonModal='psychic'] {
+    .box {
+      .left-container {
+        background: url('../img/bg-types/psychic.svg');
+      }
+    }
+  }
+  &[typePokemonModal='rock'] {
+    .box {
+      .left-container {
+        background: url('../img/bg-types/rock.svg');
+      }
+    }
+  }
+  &[typePokemonModal='ghost'] {
+    .box {
+      .left-container {
+        background: url('../img/bg-types/ghost.svg');
+      }
+    }
+  }
+  &[typePokemonModal='grass'] {
+    .box {
+      .left-container {
+        background: url('../img/bg-types/grass.svg');
+      }
+    }
+  }
+  &[typePokemonModal='steel'] {
+    .box {
+      .left-container {
+        background: url('../img/bg-types/steel.svg');
+      }
+    }
+  }
+  &[typePokemonModal='water'] {
+    .box {
+      .left-container {
+        background: url('../img/bg-types/water.svg');
+      }
+    }
+  }
+  &[typePokemonModal='fire'] {
+    .box {
+      .left-container {
+        background: url('../img/bg-types/fire.svg');
+      }
+    }
+  }
+  &[typePokemonModal='flying'] {
+    .box {
+      .left-container {
+        background: url('../img/bg-types/flying.svg');
+      }
+    }
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: rgb(0, 0, 0, 0.5);
+  }
+  .box {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 71rem;
+    height: 50.8rem;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 40px rgba(13, 12, 71, 0.05);
+    border-radius: 1.6rem;
+    display: flex;
+    transform: translateY(4rem);
+    transition: transform 0.3s ease-in;
+    .close {
+      position: absolute;
+      top: -4.4rem;
+      right: 0;
+      width: 3.6rem;
+      height: 3.6rem;
+      background-color: #ffffff;
+      border-radius: 0.8rem;
+      @include centerTotalFlex;
+    }
+    .left-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      max-width: 19.1rem;
+      background-repeat: no-repeat;
+      background-position: center center;
+      .icon {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        width: 3.4rem;
+        height: 3.4rem;
+        border-radius: 50%;
+        background-color: #ffffff;
+        @include centerTotalFlex;
+      }
+      .image {
+        position: absolute;
+        left: 1.4rem;
+        bottom: 13.8rem;
+        width: 20.2rem;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .right-container {
+      padding: 3.5rem 7.2rem 2.9rem 7.4rem;
+      .name {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 1rem;
+        h2 {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 700;
+          font-size: 2.8rem;
+          line-height: 3.4rem;
+          letter-spacing: -0.01em;
+          color: #2f3133;
+        }
+        span {
+          position: relative;
+          margin-top: -0.3rem;
+          margin-left: 0.8rem;
+          display: inline-block;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1.6rem;
+          line-height: 2rem;
+          letter-spacing: -0.01em;
+          color: #7a7d80;
+        }
+      }
+      .type {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 3.2rem;
+        li {
+          &:not(:first-child) {
+            margin-left: 1rem;
+          }
+        }
+      }
+      .info {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 3.2rem;
+        li {
+          &:not(:first-child) {
+            margin-left: 4.8rem;
+          }
+          span {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 1.3rem;
+            line-height: 1.6rem;
+            letter-spacing: -0.01em;
+            color: #7a7d80;
+            margin-bottom: 0.4rem;
+          }
+          strong {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            line-height: 1.7rem;
+            letter-spacing: -0.01em;
+            color: #2f3133;
+          }
+        }
+      }
+      .weak {
+        margin-bottom: 3.2rem;
+        h4 {
+          font-family: 'Inter', sans-serif;
+          font-weight: 600;
+          font-size: 1.3rem;
+          line-height: 1.6rem;
+          letter-spacing: -0.01em;
+          color: #4d5053;
+          margin-bottom: 1.6rem;
+        }
+        ul {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          align-items: 100%;
+          li {
+            &:not(:first-child) {
+              margin-left: 1rem;
+            }
+          }
+        }
+      }
+      .stats {
+        h5 {
+          font-family: 'Inter', sans-serif;
+          font-weight: 600;
+          font-size: 1.3rem;
+          line-height: 1.6rem;
+          letter-spacing: -0.01em;
+          color: #4d5053;
+          margin-bottom: 1.6rem;
+        }
+        .all {
+          .item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &:not(:last-child) {
+              margin-bottom: 1.3rem;
+            }
+            span {
+              display: block;
+              max-width: 6.8rem;
+              font-family: 'Inter', sans-serif;
+              font-weight: 400;
+              font-size: 1.2rem;
+              line-height: 1.5rem;
+              color: #7a7d80;
+            }
+            .bar-status {
+              position: relative;
+              width: 100%;
+              max-width: 28.3rem;
+              height: 0.3rem;
+              background-color: #eff3f6;
+              .bar {
+                top: 0;
+                left: 0;
+                z-index: 0;
+                width: 56%;
+                height: 100%;
+                background-color: #c20001;
+                .separator {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 100%;
+                  li {
+                    width: 0.4rem;
+                    height: 0.3rem;
+                    background-color: #ffffff;
+                    &:not(:first-child) {
+                      margin-left: 5.4rem;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.open-modal {
+  .modal {
+    opacity: 1;
+    pointer-events: all;
+    .box {
+      transform: translateY(0);
+    }
+  }
+}
