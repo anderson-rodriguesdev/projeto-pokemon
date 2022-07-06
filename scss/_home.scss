@@ -1,3 +1,134 @@
-body {
-  background-color: black;
+.s-area-slide-hero {
+  position: relative;
+  width: 100%;
+  height: 99.4rem;
+  .slide-hero {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .swiper-slide {
+    &.blue {
+      .main-area {
+        background-image: url('../img/bg-blue.svg');
+        .main-content {
+          .image {
+            .pokeball {
+              position: relative;
+              top: -6.5rem;
+              left: -1.3rem;
+            }
+          }
+        }
+        .area-explore {
+          .text {
+            .icon {
+              background-color: rgba(175, 192, 227, 0.3);
+            }
+          }
+        }
+      }
+    }
+    &::after {
+      content: '';
+      width: 100%;
+      height: 28.8rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #eff3f6;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .main-area {
+      position: relative;
+      background: url('../img/bg-red.svg') no-repeat center center;
+      background-size: cover;
+      width: 100%;
+      height: 70.6rem;
+      padding-top: 13.3rem;
+      .container {
+        position: relative;
+        height: 100%;
+      }
+      .main-content {
+        .tag {
+          margin: 0 auto;
+          margin-bottom: 2.9rem;
+        }
+        h1 {
+          text-align: center;
+          margin-bottom: 0.8rem;
+        }
+        p {
+          font-family: 'Inter', sans-serif;
+          font-weight: 500;
+          font-size: 1.8rem;
+          line-height: 150%;
+          text-align: center;
+          color: #ffffff;
+        }
+        .image {
+          position: relative;
+          z-index: 1;
+          width: 100%;
+          max-width: 79.8rem;
+          margin: 0 auto;
+          margin-top: 12.2rem;
+          .lights {
+            position: absolute;
+            /*centralização com absolute: left 50% - metade do tamanho da imagem*/
+            left: 50%;
+            margin-left: -8.5rem;
+            top: -4.9rem;
+          }
+        }
+      }
+      .area-explore {
+        position: absolute;
+        bottom: 8rem;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        .text {
+          position: relative;
+          display: flex;
+          align-items: center;
+          transform: rotate(-90deg);
+          top: -3.9rem;
+          left: -2.4rem;
+          .icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            background-color: #c90c0c;
+            @include centerTotalFlex;
+            transform: rotate(90deg);
+          }
+          span {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 1.3rem;
+            line-height: 150%;
+            color: #ffffff;
+            margin-left: 3rem;
+          }
+        }
+        .swiper-pagination {
+          position: relative;
+          .swiper-pagination-bullet {
+            width: 0.7rem;
+            height: 0.7rem;
+            background-color: #ffffff;
+            &:not(:first-child) {
+              margin-left: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }
