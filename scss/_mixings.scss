@@ -3,3 +3,9 @@
   align-items: center;
   justify-content: center;
 }
+
+@mixin responsive($screenSize) {
+  @media (max-width: $screenSize) {
+    @content;
+  }
+}
