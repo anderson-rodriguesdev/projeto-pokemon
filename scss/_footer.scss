@@ -20,4 +20,19 @@ footer {
       color: rgba(255, 255, 255, 0.8);
     }
   }
+  @include responsive(560px) {
+    padding: 4rem 0;
+    .container {
+      flex-direction: column;
+    }
+    .text {
+      h3 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        margin-bottom: 4.8rem;
+      }
+    }
+  }
 }
