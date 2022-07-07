@@ -1,6 +1,7 @@
 {
   const cardPokemon = document.querySelectorAll('.js-open-details-pokemon');
   const closeCard = document.querySelector('.js-close-details-pokemon');
+  const cardOverlay = document.querySelector('.js-card-overlay');
 
   if (cardPokemon && closeCard) {
     function openDetailsPokemon() {
@@ -16,5 +17,6 @@
     });
 
     closeCard.addEventListener('click', closeDetailsPokemon);
+    cardOverlay.addEventListener('click', closeDetailsPokemon);
   }
 }
