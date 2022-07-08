@@ -1,5 +1,6 @@
 {
   const areaPokemons = document.getElementById('js-list-pokemons');
+  const countPokemons = document.getElementById('js-count-pokemons');
 
   function capitalizeLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -50,7 +51,6 @@
       method: 'GET',
       url: urlApi,
     }).then((response) => {
-      const countPokemons = document.getElementById('js-count-pokemons');
       const { results, next, count } = response.data;
 
       countPokemons.innerText = count;
@@ -166,7 +166,6 @@
     const allTypesActive = document.querySelectorAll('.type-filter');
     const areaPokemons = document.getElementById('js-list-pokemons');
     const btnLoadMore = document.getElementById('js-btn-load-more');
-    const countPokemonsType = document.getElementById('js-count-pokemons');
     const sectionPokemons = document.querySelector('.s-all-info-pokemons');
     const topSectionPokemons = sectionPokemons.offsetTop;
 
@@ -225,4 +224,60 @@
       btnLoadMore.style.display = 'block';
     }
   }
+
+  //funcao para buscar pokemons
+
+  const btnSearch = document.getElementById('js-btn-search');
+  const inputSearch = document.getElementById('js-input-search');
+
+  function searchPokemon() {
+    let valueInput = inputSearch.value.toLowerCase();
+    const typeFilters = document.querySelectorAll('.type-filter');
+
+    typeFilters.forEach((type) => {
+      type.classList.remove('active');
+    });
+
+    axios({
+      method: 'GET',
+      url: `https://pokeapi.co/api/v2/pokemon/${valueInput}`,
+    })
+      .then((response) => {
+        areaPokemons.innerHTML = '';
+        btnLoadMore.style.display = 'none';
+        countPokemons.innerText = 1;
+
+        const { name, id, sprites, types } = response.data;
+
+        const infoCard = {
+          nome: name,
+          code: id,
+          image: sprites.other.dream_world.front_default,
+          type: types[0].type.name,
+        };
+        if (infoCard.image) {
+          createCardPokemon(
+            infoCard.nome,
+            infoCard.code,
+            infoCard.type,
+            infoCard.image,
+          );
+        }
+      })
+      .catch((error) => {
+        if (error.response) {
+          areaPokemons.innerHTML = '';
+          btnLoadMore.style.display = 'none';
+          countPokemons.innerText = 0;
+          alert('Não foi encontrado nenhum resultado');
+        }
+      });
+  }
+
+  inputSearch.addEventListener('keyup', (event) => {
+    if ((event.code === 'Enter') | (event.code === 'NumpadEnter')) {
+      searchPokemon();
+    }
+  });
+  btnSearch.addEventListener('click', searchPokemon);
 }
