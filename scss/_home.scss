@@ -226,7 +226,7 @@
       max-width: 23.9rem;
       border-right: 1px solid #eff3f6;
       padding-top: 7.1rem;
-      padding-top: 7.1rem;
+      padding-bottom: 7.1rem;
       ul {
         li {
           &:not(:last-child) {
@@ -361,6 +361,7 @@
       .left-container {
         max-width: 15.9rem;
         padding-top: 4rem;
+        padding-bottom: 4rem;
       }
       .right-container {
         padding-top: 4rem;
