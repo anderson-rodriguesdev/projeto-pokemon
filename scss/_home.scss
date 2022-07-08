@@ -226,6 +226,7 @@
       max-width: 23.9rem;
       border-right: 1px solid #eff3f6;
       padding-top: 7.1rem;
+      padding-top: 7.1rem;
       ul {
         li {
           &:not(:last-child) {
@@ -412,6 +413,11 @@
       .right-container {
         .select-custom {
           display: block;
+          .dropdown-select {
+            li {
+              padding: 1rem 0;
+            }
+          }
         }
         .all {
           grid-template-columns: 1fr;
