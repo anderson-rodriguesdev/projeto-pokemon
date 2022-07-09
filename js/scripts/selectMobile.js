@@ -1,4 +1,5 @@
 {
+  //funcionalidades do select mobile
   const btnDropdownSelect = document.querySelector('.js-open-select-custom');
   const overlayDropdownSelect = document.querySelector('.js-overlay-select');
 

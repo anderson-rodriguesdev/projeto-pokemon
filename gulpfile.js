@@ -27,7 +27,16 @@ exports.compilaSass = compilaSass;
 //função para juntar o javascript
 function gulpJs() {
   return gulp
-    .src('js/scripts/*.js')
+    .src([
+      'js/scripts/utilities.js',
+      'js/scripts/cardPokemon.js',
+      'js/scripts/listingPokemons.js',
+      'js/scripts/loadMore.js',
+      'js/scripts/modal.js',
+      'js/scripts/searchPokemon.js',
+      'js/scripts/filtragemPokemon.js',
+      'js/scripts/*.js',
+    ])
     .pipe(concat('main.js'))
     .pipe(
       babel({
