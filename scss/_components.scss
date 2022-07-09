@@ -365,7 +365,7 @@
 .tag-type {
   display: inline-block;
   padding: 0 2.5rem;
-  line-height: 2.4rem;
+  line-height: 2.5rem;
   border-radius: 0.2rem;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
@@ -647,6 +647,7 @@
     }
     .right-container {
       padding: 3.5rem 7.2rem 2.9rem 7.4rem;
+      width: 100%;
       .name {
         display: flex;
         align-items: flex-end;
@@ -676,7 +677,7 @@
         align-items: center;
         flex-wrap: wrap;
         width: 100%;
-        margin-bottom: 3.2rem;
+        margin-bottom: 2rem;
         li {
           &:not(:first-child) {
             margin-left: 1rem;
@@ -686,7 +687,7 @@
       .info {
         display: flex;
         align-items: flex-start;
-        margin-bottom: 3.2rem;
+        margin-bottom: 2rem;
         li {
           &:not(:first-child) {
             margin-left: 4.8rem;
@@ -712,7 +713,7 @@
         }
       }
       .weak {
-        margin-bottom: 3.2rem;
+        margin-bottom: 2rem;
         h4 {
           font-family: 'Inter', sans-serif;
           font-weight: 600;
@@ -723,13 +724,16 @@
           margin-bottom: 1.6rem;
         }
         ul {
-          display: flex;
-          align-items: center;
-          flex-wrap: wrap;
-          align-items: 100%;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1rem;
           li {
             &:not(:first-child) {
-              margin-left: 1rem;
+              margin: 0;
+            }
+            .tag-type {
+              width: 100%;
+              text-align: center;
             }
           }
         }
