@@ -3,6 +3,7 @@
 
 Clique no ícone para acessar o site do projeto
 <br>
+<br>
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a150dda1-e177-481b-b2ea-9d6c1297eddf/deploy-status)](https://lp-pokemon-andersonrodriguesdev.netlify.app/)
 
 ## Descrição
