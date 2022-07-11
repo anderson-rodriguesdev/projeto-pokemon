@@ -15,6 +15,7 @@ function searchPokemon() {
     url: `https://pokeapi.co/api/v2/pokemon/${valueInput}`,
   })
     .then((response) => {
+      //reset dos card. Apagar tudo para criar novamente conforme o que foi pesquisado.
       areaPokemons.innerHTML = '';
       btnLoadMore.style.display = 'none';
       countPokemons.innerText = 1;
@@ -28,12 +29,14 @@ function searchPokemon() {
         type: types[0].type.name,
       };
       if (infoCard.image) {
+        //recriação do card ao fazer a busca.
         createCardPokemon(
           infoCard.nome,
           infoCard.code,
           infoCard.type,
           infoCard.image,
         );
+        //adição do modal ao novo card.
         const cardPokemon = document.querySelectorAll(
           '.js-open-details-pokemon',
         );
