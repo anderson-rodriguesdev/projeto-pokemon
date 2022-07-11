@@ -34,6 +34,12 @@ function searchPokemon() {
           infoCard.type,
           infoCard.image,
         );
+        const cardPokemon = document.querySelectorAll(
+          '.js-open-details-pokemon',
+        );
+        cardPokemon.forEach((card) => {
+          card.addEventListener('click', openDetailsPokemon);
+        });
       }
     })
     .catch((error) => {
